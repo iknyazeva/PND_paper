@@ -2,6 +2,10 @@
 \documentclass[11pt,twoside,a4paper]{article}
 \usepackage{styleAND_2023}
 \usepackage{xurl}% переносимые DOI в списке литературы
+% Барьер: рисунки и таблицы блока результатов не уходят за следующий заголовок (то же, что \FloatBarrier из placeins)
+\makeatletter
+\newcommand{\FloatBarrier}{\par\begingroup\let\@elt\relax\edef\@tempa{\@botlist\@deferlist\@dbldeferlist}\ifx\@tempa\@empty\endgroup\else\endgroup\clearpage\fi}
+\makeatother
 \captionsetup[table]{labelsep=period}
 % Подзаголовки на отдельной строке (не в подбор)
 \makeatletter
