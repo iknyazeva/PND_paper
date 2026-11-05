@@ -1,0 +1,22 @@
+# Локальные настройки и системные файлы
+.DS_Store
+/.claude/
+/.codex/
+/.agents/
+/.aws/
+
+# Результаты сборки LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.run.xml
+*.bcf
+/*.pdf

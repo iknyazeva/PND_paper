@@ -1,0 +1,186 @@
+% !TeX program = pdflatex
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage{styleAND_2023}
+\usepackage{xurl}% переносимые DOI в списке литературы
+\captionsetup[table]{labelsep=period}
+% Подзаголовки на отдельной строке (не в подбор)
+\makeatletter
+\renewcommand{\subsection}{\@startsection{subsection}%
+  {1}{0pt}{0.25cm}{0.4cm}%
+  {\bfseries\raggedright}%
+}
+\makeatother% отделяем номер таблицы от заголовка
+\emergencystretch=2em% устранение редких переполнений строк
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ПОЛЯ, КОТОРЫЕ ДОЛЖЕН ЗАПОЛНИТЬ АВТОР ПЕРЕД ПОДАЧЕЙ (метка ЗАПОЛНИТЬ): %%%
+%%% 1. \authors и \authorsen --- инициалы и фамилии всех авторов           %%%
+%%% 2. Блок аффилиаций на рус. и англ. --- организация, полный юридический %%%
+%%%    адрес с индексом, e-mail КАЖДОГО автора                             %%%
+%%% 3. \lett --- значок автора для переписки (после соответствующей фамилии)%%
+%%% 4. Благодарности (\Acknowledgements и \Acknowledgementsen) --- гранты   %%%
+%%% 5. Проверить УДК (сейчас 612.825 --- физиология мозга; возможны         %%%
+%%%    варианты 517.9, 004.94, 616.8-073 по решению авторов)                %%%
+%%% 6. После принятия --- блоки информации об авторах (info-author)         %%%
+%%% Поля, заполняемые редакцией ( papernumber, EDN, даты, страницы ),      %%%
+%%% оставлены в шаблонном виде.                                            %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\yearpub}{2026}
+\newcommand{\volumemag}{xx}
+\newcommand{\numbermag}{x}
+\newcommand{\published}{xx.xx.xxxx}% вышел в свет, опубликована
+
+%%%%%%%%% Заполняется редактором
+
+\renewcommand{\papernumber}{xxxxxx}
+\renewcommand{\EDN}{EDN:~XXXXXX}
+\renewcommand{\received}{xx.xx.xxxx}% - поступила в редакцию
+\renewcommand{\accepted}{xx.xx.xxxx}% - принята к публикации
+\renewcommand{\onlinepublished}{xx.xx.xxxx}% - опубликована онлайн
+\renewcommand{\firstpage}{xxx}
+\renewcommand{\lastpage}{xxx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}{Лемма}
+\newtheorem{proof}{Доказательство}
+\newtheorem{mydef}{Определение}
+\newtheorem{mynote}{Замечание}
+\newtheorem{exmp}{Пример}
+\newtheorem{statement}{Утверждение}
+\newtheorem{proposition}{Предложение}
+\newtheorem{corollary}{Следствие}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\zerocouter
+\graphicspath{{Figure/}} % путь к папке с графическами файлами
+
+% Разрешение крупных плавающих рисунков (16x18 см) вблизи точек упоминания
+\renewcommand{\topfraction}{0.97}
+\renewcommand{\bottomfraction}{0.6}
+\renewcommand{\textfraction}{0.03}
+\renewcommand{\floatpagefraction}{0.9}
+\setcounter{topnumber}{2}
+\setcounter{totalnumber}{3}
+
+%%%%% Информация о статье. Заполняется автором
+
+\renewcommand{\titpaper}{Влияние нелинейности гемодинамического ответа на точность оценки контрастов активации в фМРТ}
+\renewcommand{\authors}{Корелов~М.\,С., Князева~И.\,С., Машарипов~Р.\,С., Медведева~Т.\,В., Киреев~М.\,В.}
+\renewcommand{\titpaperen}{The effect of hemodynamic response nonlinearity on the accuracy of activation contrast estimation in fMRI}
+\renewcommand{\authorsen}{Korelov~M.\,S., Knyazeva~I.\,S., Masharipov~R.\,S., Medvedeva~T.\,V., Kireev~M.\,V.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\label{firstpage}
+\thispagestyle{firststyle}
+
+\vspace*{0cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\infojournal
+\vspace*{.2cm}
+
+{\small \noindent
+	Научная статья\hfill \doi\\ % Научная статья %% Краткое сообщение %% Обзорная статья
+	УДК~612.825  \hfill \EDN
+    %517.9, 004.94
+}
+\vspace*{.2cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}\textbf{\large \titpaper}\\[1\baselineskip]
+% 
+\emph{М.\,С.~Корелов$^{1,3}$\lett, И.\,С.~Князева$^{1}$, Р.\,С.~Машарипов$^{1}$, Т.\,В.~Медведева$^{1}$, М.\,В.~Киреев$^{1,2}$}\vspace{.7\baselineskip}
+
+\footnotesize{
+	$^{1}$Институт мозга человека имени Н.П. Бехтеревой РАН, Россия\\
+	$^{2}$Санкт-Петербургский государственный университет, Россия\\
+    $^{3}$Санкт-Петербургский политехнический университет Петра Великого, Россия\\
+	E-mail: \Letter\,korelovm@yandex.ru, knyazeva@ihb.spb.ru, masharipov@ihb.spb.ru, t.medvedeva2919@gmail.com, kireev@ihb.spb.ru\\[1pt]
+		\emph{Поступила в редакцию   \received, принята к публикации \accepted, \\  опубликована онлайн \onlinepublished, опубликована \published}
+	}
+\end{center}\vspace{.5\baselineskip}
+
+\begin{abstract}
+	\noindent\textbf{\textit{Аннотация}}.
+Функциональная МРТ регистрирует BOLD-сигнал, косвенно отражающий нейрональную активность через механизмы нейроваскулярного сопряжения. Для оценки активации различных областей головного мозга используется общая линейная модель (ОЛМ), в которой регрессоры, кодирующие моменты предъявления стимулов в разных условиях, формируются путем свертки с канонической функцией гемодинамического ответа (HRF). Коэффициенты регрессии отражают амплитуду BOLD-ответа в каждом условии, а их различия оцениваются с помощью контрастов. Однако преобразование нейрональной активности в BOLD-сигнал представляет собой сложный нелинейный процесс, который не может быть полностью описан линейной сверткой с фиксированной функцией гемодинамического ответа.
+\textit{Цель.} Определить точность этих оценок, когда BOLD-сигнал порождается нелинейной гемодинамической системой, и проверить одношаговые аналитические поправки без повторной подгонки нелинейной модели.
+\textit{Методы.} BOLD-сигнал получен интегрированием моделей P-DCM и Balloon--Windkessel при полностью заданном входе, поэтому истинные амплитуды и их разность известны. Амплитуды и контраст оценивались общей линейной моделью с канонической HRF. Для отделения ошибки формы HRF от вклада нелинейной динамики вычислялось собственное линейное приближение каждой модели. Полная поправка и статическая поправка винеровского типа построены по второму порядку разложения Вольтерра, их параметры зафиксированы до проверки на независимых данных.
+\textit{Результаты.} Ошибки оценок зависели от плотности и последовательности событий и от общего уровня стимуляции. В иллюстративном примере с большой разницей амплитуд и плотной последовательностью событий (одна запись синтезированного сигнала) полная поправка уменьшила занижение контраста с 36 до 12\%, а ошибку оценки большей амплитуды с 27 до 3\%. При нулевом заданном контрасте различия в последовательностях предшествующих событий могли приводить к ненулевой оценке контраста. Ошибка формы HRF и нелинейный вклад могли частично компенсироваться. Полная поправка уменьшала ошибки в части условий, а в других увеличивала их сверх заранее заданного допуска; статическая поправка улучшала отдельные коэффициенты чаще, чем контраст. Ни одна из поправок не улучшила оценки во всех проверенных вариантах предъявления стимулов. Приближение второго порядка воспроизводило знак ошибки контраста во всех условиях с различимым знаком.
+\textit{Заключение.} Стандартный анализ с канонической HRF давал смещенные оценки амплитуд и контраста, которые зависели от амплитуд и временной структуры стимуляции; близость линейного отклика к канонической форме точности не гарантировала. Выводы относятся к рассмотренным моделям и протоколам; их перенос на физиологию человека требует отдельного обоснования.\vspace{0.5\baselineskip}
+
+\keywords{функциональная МРТ, BOLD-сигнал, функция гемодинамического ответа, модель Balloon--Wind\-kes\-sel, нелинейность, общая линейная модель, контраст активаций, ряды Вольтерра.}
+
+\Acknowledgements{ЗАПОЛНИТЬ: финансовая поддержка (гранты), благодарности конкретным лицам. Либо указать: «Работа выполнена без финансовой поддержки фондов».}
+
+\Referenc{\textit{\authors}\hspace{3pt}\titpaper\hspace{2pt}//\hspace{2pt}Известия вузов. ПНД. \yearpub. T.~\volumemag, №~\numbermag. С.~\firstpage--\lastpage. \doi. \EDN}
+
+\license
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% английский титульник
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\noindent{\small Article %% Article %%  Short communication  %%  Review
+	\hfill\doi\\
+	
+}\vspace{.5\baselineskip}
+
+\begin{center}\textbf{\large \titpaperen}
+	\vspace{1\baselineskip}
+	
+\emph{M.\,S.~Korelov$^{1,3}$\lett, I.\,S.~Knyazeva$^{1}$, R.\,S.~Masharipov$^{1}$, T.\,V.~Medvedeva$^{1}$, M.\,V.~Kireev$^{1,2}$}\vspace{.7\baselineskip}
+
+\footnotesize{
+	$^{1}$Bekhtereva Institute of the Human Brain Russian Academy of Sciences, Russia \\
+	$^{2}$St.Petersburg State University, Russia\\
+	$^{3}$Peter the Great St.Petersburg Polytechnic University, Russia\\
+	E-mail: \Letter\,korelovm@yandex.ru, knyazeva@ihb.spb.ru, masharipov@ihb.spb.ru, t.medvedeva2919@gmail.com, kireev@ihb.spb.ru\\[1pt]
+	\emph{Received  \received, accepted \accepted, available online \onlinepublished, published \published}	
+		
+	}
+\end{center}\vspace{.5\baselineskip}
+
+\begin{abstract}
+
+\noindent\textbf{\textit{Abstract.}}
+Functional MRI records the BOLD signal, which indirectly reflects neural activity through neurovascular coupling. Activation of different brain regions is assessed with the general linear model (GLM), whose regressors, encoding the times of stimulus presentation in different conditions, are formed by convolution with the canonical hemodynamic response function (HRF). The regression coefficients reflect the amplitude of the BOLD response in each condition, and their differences are assessed by means of contrasts. However, the transformation of neural activity into the BOLD signal is a complex nonlinear process that cannot be fully described by linear convolution with a fixed hemodynamic response function.
+The \textit{purpose} of this study is to determine the accuracy of these estimates when the BOLD signal is generated by a nonlinear hemodynamic system, and to test one-step analytical corrections without refitting a nonlinear model.
+\textit{Methods.} BOLD signals were obtained by integrating the P-DCM and Balloon--Windkessel models with a fully specified input, so the true amplitudes and their difference were known. The amplitudes and the contrast were estimated using a general linear model with the canonical HRF. The intrinsic linear approximation of each model was computed to separate HRF-shape error from the contribution of nonlinear dynamics. The full correction and the static Wiener-type correction were derived from the second-order Volterra expansion, and their parameters were fixed before testing on independent data.
+\textit{Results.} Estimation errors depended on event density and sequence and on the overall stimulation level. In an illustrative example with a large amplitude difference and densely packed events (a single simulated recording), the full correction reduced contrast underestimation from 36 to 12\% and the error in the larger amplitude estimate from 27 to 3\%. With a zero specified contrast, differences in stimulation history could produce a nonzero contrast estimate. HRF-shape error and the nonlinear contribution could partly cancel. The full correction reduced errors in some conditions and in others increased them beyond the predefined tolerance; the static correction improved individual coefficients more often than the contrast. Neither correction improved the estimates over the entire tested domain. The second-order approximation reproduced the sign of the contrast error in all conditions where the sign was resolvable.
+\textit{Conclusion.} The standard analysis with the canonical HRF gave biased amplitude and contrast estimates that depended on the amplitudes and the temporal structure of stimulation; closeness of the linear response to the canonical shape did not guarantee accuracy. The findings apply to the studied models and protocols; their extension to human physiology requires separate justification.
+\vspace{0.5\baselineskip}
+
+
+\keywordsen{functional MRI, BOLD signal, hemodynamic response function, Balloon--Wind\-kes\-sel model, nonlinearity, general linear model, activation contrast, Volterra series.}
+	
+\Acknowledgementsen{This work was supported by...}
+	
+\Referencen{\textit{\authorsen}\hspace{3pt}\titpaperen.\hspace{2pt}{Izvestiya VUZ. Applied Nonlinear Dynamics}. \yearpub;\volumemag(\numbermag):\firstpage--\lastpage. \doi}
+\licensen
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% текст
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{sections/01-introduction}
+\input{sections/02-methods}
+\input{sections/02b-kernels}
+\input{sections/03-results}
+\input{sections/04-discussion}
+\input{sections/05-conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{sections/06-references}
+
+\label{lastpage}
+\end{document}

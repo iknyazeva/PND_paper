@@ -1,0 +1,316 @@
+\usepackage{mathtext,amssymb,amsmath}
+\usepackage[utf8]{inputenc}       % Кодировка входного документа;
+                                    % при необходимости, вместо cp1251
+                                    % можно указать cp866 (Alt-кодировка
+                                    % DOS) или koi8-r.
+\usepackage[T2A]{fontenc}           % Кодировка для шрифтов LH
+\usepackage[english,russian]{babel} % Включение русификации, русских и
+                                    % английских стилей и переносов
+
+\topmargin=-15mm \textwidth=160mm \textheight=230mm
+\oddsidemargin=-5mm \evensidemargin=4mm
+
+
+\usepackage{cmap}
+\usepackage{fancyhdr}% колонтитулы
+\usepackage{graphicx}           %графики
+\usepackage{floatflt}       %верстка в оборку
+\usepackage{wrapfig}
+\usepackage[normal]{multicap}%подрисуночная подпись
+\usepackage{multirow}
+\usepackage{epsfig}
+%\usepackage{rotating}
+\usepackage{multicol}           % 2 колон
+\usepackage{cite}                   % [1-3] [1],[2], [3]
+\usepackage{abstract}
+
+\usepackage{caption}
+\captionsetup[figure]{labelsep=period,font=footnotesize}
+\captionsetup[table]{
+	labelsep=none,
+	justification={raggedleft},
+	name={\small\raggedleft  Таблица},
+	font={small},
+	labelfont={small},
+	skip=5pt
+}
+
+\usepackage{subfig}
+\renewcommand{\thesubfigure}{\normalsize\textit{,\;\alph{subfigure}}}
+
+\usepackage{url}
+\urlstyle{rm}
+
+
+\usepackage{xcolor}
+\definecolor{linkcolor}{HTML}{0000CD} % цвет ссылок   0000CD
+\definecolor{urlcolor}{HTML}{000000} % цвет гиперссылок
+\definecolor{citecolor}{HTML}{FF0000} % цвет гиперссылок FF0000
+\definecolor{pagecolor}{HTML}{000000} % цвет гиперссылок
+\usepackage[bookmarks=true,pagecolor=black]{hyperref}
+\hypersetup{pagecolor=pagecolor,linkcolor=linkcolor,urlcolor=urlcolor,citecolor=citecolor, colorlinks=true,plainpages = false} % FF0000
+
+\usepackage{amsfonts,amssymb,mathrsfs,amscd}
+
+
+%\usepackage{microtype}
+
+%\renewcommand{\rmdefault}{ftm}  % Шрифт Times
+\parindent=1cm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Формирование титульного листа не с новой страницы
+\makeatletter
+\renewcommand\maketitle{\par
+\@afterindentfalse \@maketitle
+}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Переопределение титульного листа %%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand{\@maketitle}{
+\begin{center}
+{\large\textbf{\@title}}\par
+\vspace{1\baselineskip}
+\textit{\@author}
+\par\vspace{0.5\baselineskip}
+\end{center}
+}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\renewcommand\thepage{\small{\@arabic\c@page}}  % Форматт номера страницы
+\makeatother
+
+%%%%%%%%%%%%%%%%% Колонтитулы %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[LE]{$~$\\ \small \thepage
+}
+\fancyfoot[LO]{{\small\emph{\authors}\\[-1.5pt]\info}}
+\fancyfoot[RE]{{\small\emph{\authors}\\[-1.5pt]\info}}
+\fancyfoot[RO]{$~$\\ \small \thepage
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%% Колонтитулы первой странцицы %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fancypagestyle{firststyle}
+{\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[LE]{{$~$\\[-1.5pt]\small\copyright\,\emph{\authors, \yearpub}}}
+\fancyfoot[LO]{{$~$\\[-1.5pt]\small\copyright\,\emph{\authors, \yearpub}}}
+\fancyfoot[RE]{}
+\fancyfoot[RO]{}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\titpaper}{}
+\newcommand{\authors}{}
+\newcommand{\titpaperen}{}
+\newcommand{\authorsen}{}
+
+
+\usepackage[misc]{ifsym}
+\newcommand{\lett}{$^{\,\text \Letter}$}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\info}{Известия вузов. ПНД,  \yearpub, т.~\volumemag, №~\numbermag}
+\newcommand{\doi}{\href{https://doi.org/10.18500/0869-6632-\papernumber}{DOI:~10.18500/0869-6632-\papernumber}}
+\newcommand{\keywords}[1]{\footnotesize\noindent{\emph{\textbf{Ключевые слова}}:\hspace{3pt}#1}\vspace{0.5\baselineskip}}
+\newcommand{\keywordsen}[1]{\footnotesize\noindent{\emph{\textbf{Keywords}}:\hspace{3pt}#1}\vspace{0.5\baselineskip}}
+\newcommand{\Referenc}[1]{\footnotesize\noindent\emph{\textbf{Для цитирования}}:\hspace{3pt}#1\vspace{0.5\baselineskip}}
+\newcommand{\Referencen}[1]{\footnotesize\noindent\emph{\textbf{For citation}}:\hspace{3pt}#1\vspace{0.5\baselineskip}}
+\newcommand{\Acknowledgements}[1]{\footnotesize\noindent\emph{\textbf{Благодарности}}. #1\vspace{0.5\baselineskip}}
+\newcommand{\Acknowledgementsen}[1]{\footnotesize\noindent\emph{\textbf{Acknowledgements}}. #1\vspace{0.5\baselineskip}}
+\newcommand{\corresponden}[1]{\footnotesize Автор для переписки #1}
+\newcommand{\correspondenen}[1]{\footnotesize Correspondence should be addressed to #1}
+\newcommand{\license}{\footnotesize\noindent{\textit{Статья опубликована на условиях  Creative Commons Attribution License (CC-BY 4.0)}.}\vspace{0.5\baselineskip}}
+\newcommand{\licensen}{\footnotesize\noindent\textit{This is an open access article distributed under the terms of Creative Commons Attribution 		License (CC-BY 4.0).}\vspace{0.5\baselineskip}}
+\newcommand{\hdoi}[1]{\href{https://doi.org/#1}{DOI:~#1}}
+\newcommand{\infojournal}{\noindent{\small{Известия высших учебных заведений. Прикладная нелинейная динамика. \yearpub. Т.~\volumemag, №~\numbermag\\
+	Izvestiya Vysshikh Uchebnykh Zavedeniy. Applied Nonlinear Dynamics. \yearpub;\volumemag(\numbermag)}\\
+	
+	
+}}
+
+\newcommand{\ORCID}[1]{\href{https://orcid.org/#1}{ORCID:~#1}}
+\newcommand{\AuthorID}[1]{\href{https://elibrary.ru/author_profile.asp?id=#1}{AuthorID (eLibrary.Ru):~#1}}
+\newcommand{\EDN}[1]{\href{https://elibrary.ru/#1}{EDN:~#1}}
+\newcommand{\papernumber}[1]{#1}
+
+\newcommand{\received}[1]{#1}
+\newcommand{\accepted}[1]{#1}
+\newcommand{\firstpage}{xx}
+\newcommand{\lastpage}{xx}
+\newcommand{\onlinepublished}[1]{#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\const}{\rm const}
+\renewcommand{\Im}{\,{\rm Im}\,}
+\renewcommand{\Re}{\,{\rm Re}\,}
+\def\abstractname{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\zerocouter}{
+	\setcounter{equation}{0} 
+	\setcounter{section}{0}
+	\setcounter{figure}{0}
+	\setcounter{footnote}{0}
+	\setcounter{theorem}{0}
+	\setcounter{table}{0}
+	\setcounter{lemma}{0}
+	%\setcounter{dokaz}{0}
+	\setcounter{mynote}{0}
+	\setcounter{exmp}{0}
+	\setcounter{statement}{0}
+	\setcounter{proposition}{0}
+	\setcounter{corollary}{0}
+	%\setcounter{cond}{0}
+	%\setcounter{proof}{0}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter \renewcommand{\section}{\@startsection{section}%  форматирование раздела
+{1}%                                                           по центру
+{0pt}%%                                                         %%%%
+  {0,75cm}%                                                     %%%%
+   {0,4cm}%                                                     %%%%
+   {\centering                                                  % центрирование (задается в поле стиля)
+  \bf}%
+   }
+\makeatother
+\makeatletter \renewcommand{\subsection}{\@startsection{subsection}%   форматирование подподраздела
+{1}%                                                          влево, в подбор
+{27pt}%%                                                         %%%%
+  {0.25cm}%                                                     %%%%
+   {-0,4cm}%                                                     %%%%
+   {\centering                                                  % центрирование (задается в поле стиля)
+  \bf}%
+   }
+\makeatother
+\makeatletter \renewcommand{\subsubsection}{\@startsection{subsubsection}%  форматирование подподраздела
+{1}%                                                           влево, в подбор
+{27pt}%%                                                         %%%%
+  {0.25cm}%                                                     %%%%
+   {-0,4cm}%                                                     %%%%
+   {                                                % центрирование (задается в поле стиля)
+  \bfseries}%
+   }
+\makeatother
+
+
+\makeatletter 
+\def\@seccntformat#1{\csname the#1\endcsname. } 
+\makeatother
+
+
+\renewcommand{\footnoterule}{ %длина линии сноски
+  \vspace*{5pt}  \hrule width .1\columnwidth            %%%%%%
+    \vspace*{2.6pt}}                        %%%%%%%%%%%
+\footskip=14mm      % растояние от посл. строки блока текста до № стр.
+
+
+\makeatletter \renewcommand{\@makefnmark}{\hbox{\mathsurround=0pt
+{\small $^{\@thefnmark}$}}} \makeatother                                     %вид номера сноски кегль 9
+
+
+\makeatletter 
+% Modify theorem environments (from latex.tex) to add a period after the theorem number:
+\def\thmstyle{\it} % style of text in theorem environment
+\def\@begintheorem#1#2{\it \trivlist \item[\hskip
+	\labelsep{\bf #1\ #2.}]\thmstyle}
+\def\@opargbegintheorem#1#2#3{\it \trivlist \item[\hskip
+	\labelsep{\bf #1\ #2\ (#3).}]\thmstyle}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\if@titlepage
+\renewenvironment{abstract}{%
+\titlepage
+\null\vfil
+\@beginparpenalty\@lowpenalty
+\begin{center}%
+\footnotesize%\bfseries
+\abstractname
+\@endparpenalty\@M
+\end{center}}%
+{\par\vfil\null\endtitlepage}
+\else
+\renewenvironment{abstract}{%
+\if@twocolumn
+\section*{}%
+\else
+\footnotesize%\small
+%\quotation
+\fi}
+{\if@twocolumn\else\endquotation\fi}
+\fi
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\labelsep=10pt
+\parskip=0pt
+\itemsep=0pt
+%\topsep=0pt
+\partopsep=0pt
+\parsep=0pt
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.\hfill}%список литературы без []
+\makeatother
+
+
+
+\newenvironment{ltrtr}{
+\vspace{0.5\baselineskip} \noindent {\bf{Список литературы
+%References
+}} %\vspace{0.5\baselineskip}
+\begin{enumerate}
+\partopsep=0pt\topsep=0pt\itemsep=0pt\parsep=0pt\parskip=0pt}
+{\end{enumerate}}
+
+\def\le{\leqslant}
+\def\leq{\leqslant}
+\def\ge{\geqslant}
+\def\geq{\geqslant}
+
+\newcommand{\fl}{f\hspace{1pt}l}
+%%%%%%
+\newenvironment{ltrtq}{
+\vspace{0.5\baselineskip} \noindent {\bf{References
+}} %\vspace{0.5\baselineskip}
+\begin{enumerate}
+\partopsep=0pt\topsep=0pt\itemsep=0pt\parsep=0pt\parskip=0pt}
+{\end{enumerate}}
+
+
+\newenvironment{info-author}[2] % информация об авторе
+{
+	\begin{minipage}[b]{0.2\textwidth} \centering \includegraphics[width=3cm]
+		{#1}
+	\end{minipage}\quad~\begin{minipage}[b]{0.77\textwidth} \renewcommand{\baselinestretch}{0.9}
+		{\footnotesize #2
+			
+	}} {\end{minipage}\vspace{1\baselineskip}
+}
+
+
+
+\endinput
