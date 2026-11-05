@@ -1,0 +1,15 @@
+{
+  "regimes": [
+    "nominal",
+    "param",
+    "structure"
+  ],
+  "weights": "equal squared risks across 27 groups",
+  "upper_bounds": "unchanged from original test",
+  "delta_eq": 0.001,
+  "sources": {
+    "strata_test.csv": "9627a10e916f1a506ce0950454845094b1c644982cee3b58f4b63ef361d0efac",
+    "pooled_by_regime.csv": "34e7b20a76a0dc5a307aa60e7fc27bf01a9bff04f8d9630509ee2a302b2f5ed3",
+    "config.json": "353ff5c1d38ca4d27268a41b2a14caa1199f62c853876d9d926530be2a03a62f"
+  }
+}

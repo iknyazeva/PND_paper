@@ -1,0 +1,60 @@
+{
+ "history": [
+  {
+   "run_id": "article-fv-three-regimes",
+   "stage": "saved_summary",
+   "config_sha256": "6474a946645f128f1f423fd12a458224121d030d0033cf3e49b31dbd0e077bc7",
+   "sources": {
+    "hrfx/__init__.py": "9ece5eb813ef085a8d4be811ab790dcb419c35ea11dd2fda6bd64db5c875a5e1",
+    "hrfx/_simulate_bold.py": "5680c936af6a71492bf7cfe783c2a8810231ac097d37a06bbd75a891c4e8942a",
+    "hrfx/bw_scipy.py": "6e7d1ec80b0fe1828e49b14c375a3ccfc03e2cbe69e2af8710dfa4e9d1aec0fe",
+    "hrfx/contrast.py": "d0f30ce5fbdd08d5d03978c575383762df43cb8ecdec46949cd2818c09073a1a",
+    "hrfx/contrast_reuse.py": "0209dd088ea47f2de4371bf092d5102fdd9d34a38b02ad568880d21140546078",
+    "hrfx/core.py": "ce3daef06d37367edd1c33524f89dce8cd60bbc709a33ba1d0da7b3052d9c1cd",
+    "hrfx/designs.py": "5a32c200147509fdcb795adf754fdaf419c4be23b29949738c556502fa216e0e",
+    "hrfx/forms.py": "02c168684eb4962e60b15bd00e135d03c5324e53820574613a0dc698fc64fcaf",
+    "hrfx/fwmap.py": "671bf38aa2d344f58fd52e31920e5a6031a5e1ca2e93c06056d356519e7d6d41",
+    "hrfx/fwstatic.py": "63676ea4fbc897cf0e79a2b09a50ce6269a19c865b3339fe34d6c6ed92b0ef69",
+    "hrfx/generators.py": "4b6f5229557efd9b675e8343e35b3bb7d11ad959e7710e43271095a701915a02",
+    "hrfx/metrics.py": "33caf398f75e1ba7659041c5caa85042e3cd545cbfdbdea77a04496f1c5045c5",
+    "hrfx/noise.py": "a89e603f2695072cc6c8e9a999c39a7010a467c3d33d669a5c2b0ac7d521dfd7",
+    "hrfx/pnd.py": "01e8f9b6fb14a342c5d8b4df0616753c753980b5a7161f517253421c5f85ed61",
+    "hrfx/protocol.py": "04de2455b37e9a692b87530a588d1eb73aa576f4a84eb12c4b4b3ce1fe65cd70",
+    "hrfx/reduced.py": "5da44f2a54fcbbb809338f116baada944c5a07a335b0c8a3991c8ea46de3c4c4",
+    "hrfx/report.py": "ab44434b32170ffd4004258860a64e68a65b65eb48f1a0b65b745b40eaa4f343",
+    "hrfx/volterra.py": "3a99d0aef0a669d20b6fc572a431d2ba96dbabfe178340f8ae6b446931c348b8",
+    "hrfx/w4.py": "4736f694da78cebc4a176257cfccb83ab8842e010fc7b9f7bbc4a0604b69c1a2",
+    "docs/ПНД статья/_tools/update_correction_figure.py": "de2ead5f19c60410cd970d5fa11b3fface94bf20971c686d88cd697c8437b68d"
+   },
+   "time": "2026-11-05 15:15:57"
+  }
+ ],
+ "last": {
+  "run_id": "article-fv-three-regimes",
+  "stage": "saved_summary",
+  "config_sha256": "6474a946645f128f1f423fd12a458224121d030d0033cf3e49b31dbd0e077bc7",
+  "sources": {
+   "hrfx/__init__.py": "9ece5eb813ef085a8d4be811ab790dcb419c35ea11dd2fda6bd64db5c875a5e1",
+   "hrfx/_simulate_bold.py": "5680c936af6a71492bf7cfe783c2a8810231ac097d37a06bbd75a891c4e8942a",
+   "hrfx/bw_scipy.py": "6e7d1ec80b0fe1828e49b14c375a3ccfc03e2cbe69e2af8710dfa4e9d1aec0fe",
+   "hrfx/contrast.py": "d0f30ce5fbdd08d5d03978c575383762df43cb8ecdec46949cd2818c09073a1a",
+   "hrfx/contrast_reuse.py": "0209dd088ea47f2de4371bf092d5102fdd9d34a38b02ad568880d21140546078",
+   "hrfx/core.py": "ce3daef06d37367edd1c33524f89dce8cd60bbc709a33ba1d0da7b3052d9c1cd",
+   "hrfx/designs.py": "5a32c200147509fdcb795adf754fdaf419c4be23b29949738c556502fa216e0e",
+   "hrfx/forms.py": "02c168684eb4962e60b15bd00e135d03c5324e53820574613a0dc698fc64fcaf",
+   "hrfx/fwmap.py": "671bf38aa2d344f58fd52e31920e5a6031a5e1ca2e93c06056d356519e7d6d41",
+   "hrfx/fwstatic.py": "63676ea4fbc897cf0e79a2b09a50ce6269a19c865b3339fe34d6c6ed92b0ef69",
+   "hrfx/generators.py": "4b6f5229557efd9b675e8343e35b3bb7d11ad959e7710e43271095a701915a02",
+   "hrfx/metrics.py": "33caf398f75e1ba7659041c5caa85042e3cd545cbfdbdea77a04496f1c5045c5",
+   "hrfx/noise.py": "a89e603f2695072cc6c8e9a999c39a7010a467c3d33d669a5c2b0ac7d521dfd7",
+   "hrfx/pnd.py": "01e8f9b6fb14a342c5d8b4df0616753c753980b5a7161f517253421c5f85ed61",
+   "hrfx/protocol.py": "04de2455b37e9a692b87530a588d1eb73aa576f4a84eb12c4b4b3ce1fe65cd70",
+   "hrfx/reduced.py": "5da44f2a54fcbbb809338f116baada944c5a07a335b0c8a3991c8ea46de3c4c4",
+   "hrfx/report.py": "ab44434b32170ffd4004258860a64e68a65b65eb48f1a0b65b745b40eaa4f343",
+   "hrfx/volterra.py": "3a99d0aef0a669d20b6fc572a431d2ba96dbabfe178340f8ae6b446931c348b8",
+   "hrfx/w4.py": "4736f694da78cebc4a176257cfccb83ab8842e010fc7b9f7bbc4a0604b69c1a2",
+   "docs/ПНД статья/_tools/update_correction_figure.py": "de2ead5f19c60410cd970d5fa11b3fface94bf20971c686d88cd697c8437b68d"
+  },
+  "time": "2026-11-05 15:15:57"
+ }
+}

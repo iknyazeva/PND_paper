@@ -1,0 +1,12 @@
+{
+  "groups": 27,
+  "upper_bound_above_tolerance": 15,
+  "point_estimate_above_tolerance": 8,
+  "overall": {
+    "regime": "overall",
+    "C": 0.017300879622627014,
+    "FV": 0.01277125050299356,
+    "reduction": 0.0045296291196334545
+  },
+  "interpretation": "descriptive subset; original simultaneous bounds retained"
+}

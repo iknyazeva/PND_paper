@@ -4,6 +4,8 @@
 /.codex/
 /.agents/
 /.aws/
+__pycache__/
+*.py[cod]
 
 # Результаты сборки LaTeX
 *.aux
