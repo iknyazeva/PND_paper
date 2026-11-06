@@ -1,6 +1,9 @@
 % !TeX program = pdflatex
 \documentclass[11pt,twoside,a4paper]{article}
 \usepackage{styleAND_2023}
+\usepackage{array}% колонки wc{} равной ширины в таблице моделей (eq:model)
+\let\Letter\undefined% сбрасываем битый \Letter из ifsym (подключен в styleAND_2023 со значком Г)
+\usepackage{marvosym}% значок конверта (\Letter) для корреспондирующих авторов
 \usepackage{xurl}% переносимые DOI в списке литературы
 % Перед заголовком блока результатов: если рисунки или таблицы блока еще не размещены, начать новую страницу,
 % и повторять, пока все они не размещены; заголовок и текст пойдут под последним (в отличие от \FloatBarrier из placeins, без отдельных страниц с рисунками)
@@ -76,9 +79,9 @@
 %%%%% Информация о статье. Заполняется автором
 
 \renewcommand{\titpaper}{Влияние нелинейности гемодинамического ответа на точность оценки контрастов активации в фМРТ}
-\renewcommand{\authors}{Корелов~М.\,С., Князева~И.\,С., Машарипов~Р.\,С., Медведева~Т.\,В., Киреев~М.\,В.}
+\renewcommand{\authors}{Князева~И.\,С., Корелов~М.\,С., Машарипов~Р.\,С., Медведева~Т.\,В., Киреев~М.\,В.}
 \renewcommand{\titpaperen}{The effect of hemodynamic response nonlinearity on the accuracy of activation contrast estimation in fMRI}
-\renewcommand{\authorsen}{Korelov~M.\,S., Knyazeva~I.\,S., Masharipov~R.\,S., Medvedeva~T.\,V., Kireev~M.\,V.}
+\renewcommand{\authorsen}{Knyazeva~I.\,S., Korelov~M.\,S., Masharipov~R.\,S., Medvedeva~T.\,V., Kireev~M.\,V.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -101,13 +104,13 @@
 
 \begin{center}\textbf{\large \titpaper}\\[0.4\baselineskip]
 % 
-\emph{М.\,С.~Корелов$^{1,3}$\lett, И.\,С.~Князева$^{1}$, Р.\,С.~Машарипов$^{1}$, Т.\,В.~Медведева$^{1}$, М.\,В.~Киреев$^{1,2}$}\vspace{.3\baselineskip}
+\emph{И.\,С.~Князева$^{1}$\lett, М.\,С.~Корелов$^{1,3}$\lett, Р.\,С.~Машарипов$^{1}$, Т.\,В.~Медведева$^{1}$, М.\,В.~Киреев$^{1,2}$}\vspace{.3\baselineskip}
 
 \footnotesize{
 	$^{1}$Институт мозга человека имени Н.П. Бехтеревой РАН, Россия\\
 	$^{2}$Санкт-Петербургский государственный университет, Россия\\
     $^{3}$Санкт-Петербургский политехнический университет Петра Великого, Россия\\
-	E-mail: \Letter\,korelovm@yandex.ru, knyazeva@ihb.spb.ru, masharipov@ihb.spb.ru, t.medvedeva2919@gmail.com, kireev@ihb.spb.ru\\[1pt]
+	E-mail: \Letter\,knyazeva@ihb.spb.ru, \Letter\,korelovm@yandex.ru, masharipov@ihb.spb.ru, t.medvedeva2919@gmail.com, kireev@ihb.spb.ru\\[1pt]
 		\emph{Поступила в редакцию   \received, принята к публикации \accepted, \\  опубликована онлайн \onlinepublished, опубликована \published}
 	}
 \end{center}
@@ -116,9 +119,9 @@
 	\noindent\textbf{\textit{Аннотация}}.
 Активацию областей мозга по BOLD-сигналу функциональной МРТ оценивают общей линейной моделью с канонической функцией гемодинамического ответа (HRF), а различия условий выражают контрастами. Однако преобразование нейрональной активности в BOLD-сигнал нелинейно и не описывается полностью сверткой с фиксированной функцией.
 \textit{Цель.} Определить точность этих оценок при нелинейном формировании BOLD-сигнала и проверить одношаговые аналитические поправки без повторной подгонки нелинейной модели.
-\textit{Методы.} Синтетический BOLD-сигнал порождается моделями P-DCM и Balloon--Windkessel при заданном входе, поэтому истинные амплитуды известны. Собственное линейное приближение каждой модели отделяет ошибку формы HRF от вклада нелинейности. Полная и статическая поправки строятся по второму порядку разложения Вольтерра, их параметры фиксируются до проверки на независимых данных.
-\textit{Результаты.} Ошибки зависят от плотности и последовательности событий и от общего уровня стимуляции. При наибольших амплитудах медианное занижение контраста составляет около 22\%. При нулевом заданном контрасте различия в предшествующих событиях могут давать ненулевую оценку. Ошибка формы HRF и нелинейный вклад могут частично компенсироваться. Полная поправка снижает RMSE контраста при заметной разности амплитуд на 40--80\% в зависимости от шума и на 23--31\% при разбросе параметров; при нулевом контрасте и случайном назначении условий выигрыш мал, а при сильном шуме ошибка растет; статическая поправка улучшает отдельные коэффициенты чаще, чем контраст. Приближение второго порядка воспроизводит знак ошибки контраста всюду, где он различим.
-\textit{Заключение.} Стандартный анализ с канонической HRF дает смещенные оценки амплитуд и контраста, зависящие от амплитуд и временной структуры стимуляции. Одношаговые поправки второго порядка заметно уменьшают ошибку при большой разности амплитуд, но среднее улучшение не распространяется на все условия. Выводы относятся к рассмотренным моделям и протоколам, их перенос на физиологию человека требует отдельного обоснования.\vspace{0.5\baselineskip}
+\textit{Методы.} Синтетический BOLD-сигнал порождается двумя нелинейными биофизическими моделями гемодинамики при заданном входе, поэтому истинные амплитуды известны. Собственное линейное приближение каждой модели отделяет ошибку формы HRF от вклада нелинейности. Полная и статическая поправки строятся по второму порядку разложения Вольтерра, их параметры фиксируются до проверки на независимых данных.
+\textit{Результаты.} Ошибки зависят от частоты и последовательности событий и от общего уровня стимуляции. При наибольших амплитудах медианное занижение контраста составляет около 22\%. При нулевом заданном контрасте различия в предшествующих событиях могут давать ненулевую оценку. Ошибка формы HRF и нелинейный вклад могут частично компенсироваться. Полная поправка снижает RMSE контраста при заметной разности амплитуд на 40--80\% в зависимости от шума и на 23--31\% при разбросе параметров; при нулевом контрасте и случайном назначении условий выигрыш мал, а при сильном шуме ошибка растет; статическая поправка улучшает отдельные коэффициенты чаще, чем контраст. Приближение второго порядка воспроизводит знак ошибки контраста всюду, где он различим.
+\textit{Заключение.} Стандартный анализ с канонической HRF дает смещенные оценки амплитуд и контраста, зависящие от амплитуд и временной структуры стимуляции. Одношаговые поправки второго порядка заметно уменьшают ошибку при большой разности амплитуд, но улучшение не распространяется на все условия. Выводы относятся к рассмотренным моделям и протоколам, их перенос на физиологию человека требует отдельного обоснования.\vspace{0.5\baselineskip}
 
 \keywords{функциональная МРТ, BOLD-сигнал, функция гемодинамического ответа, модель Balloon--Wind\-kes\-sel, нелинейность, общая линейная модель, контраст активаций, ряды Вольтерра.}
 
@@ -143,13 +146,13 @@
 \begin{center}\textbf{\large \titpaperen}
 	\vspace{1\baselineskip}
 	
-\emph{M.\,S.~Korelov$^{1,3}$\lett, I.\,S.~Knyazeva$^{1}$, R.\,S.~Masharipov$^{1}$, T.\,V.~Medvedeva$^{1}$, M.\,V.~Kireev$^{1,2}$}\vspace{.7\baselineskip}
+\emph{I.\,S.~Knyazeva$^{1}$\lett, M.\,S.~Korelov$^{1,3}$\lett, R.\,S.~Masharipov$^{1}$, T.\,V.~Medvedeva$^{1}$, M.\,V.~Kireev$^{1,2}$}\vspace{.7\baselineskip}
 
 \footnotesize{
 	$^{1}$Bekhtereva Institute of the Human Brain Russian Academy of Sciences, Russia \\
 	$^{2}$St.Petersburg State University, Russia\\
 	$^{3}$Peter the Great St.Petersburg Polytechnic University, Russia\\
-	E-mail: \Letter\,korelovm@yandex.ru, knyazeva@ihb.spb.ru, masharipov@ihb.spb.ru, t.medvedeva2919@gmail.com, kireev@ihb.spb.ru\\[1pt]
+	E-mail: \Letter\,knyazeva@ihb.spb.ru, korelovm@yandex.ru, masharipov@ihb.spb.ru, t.medvedeva2919@gmail.com, kireev@ihb.spb.ru\\[1pt]
 	\emph{Received  \received, accepted \accepted, available online \onlinepublished, published \published}	
 		
 	}
@@ -160,8 +163,8 @@
 \noindent\textbf{\textit{Abstract.}}
 Activation of brain regions is estimated from the fMRI BOLD signal by a general linear model with the canonical hemodynamic response function (HRF); condition differences are expressed as contrasts. Yet BOLD formation is nonlinear, beyond convolution with a fixed function.
 The \textit{purpose} is to determine their accuracy and test one-step analytical corrections without refitting a nonlinear model.
-\textit{Methods.} Synthetic BOLD signals are generated by P-DCM and Balloon--Windkessel models with a specified input, so true amplitudes are known. Each model's linear approximation separates HRF-shape error from the nonlinear contribution. Full and static corrections use the second-order Volterra expansion, fixed before testing on independent data.
-\textit{Results.} Errors depend on event density and sequence and on overall stimulation level. At the largest amplitudes, median contrast underestimation is about 22\%. At zero contrast, differences in preceding events can produce a nonzero estimate. HRF-shape error and the nonlinear contribution can partly cancel. The full correction reduces the contrast RMSE by 40--80\% for clearly different amplitudes, depending on noise, and by 23--31\% under parameter spread; at zero contrast with random assignment the gain is small and strong noise raises the error; the static correction improves coefficients more often than the contrast. The second-order approximation reproduces the contrast error sign wherever resolvable.
+\textit{Methods.} Synthetic BOLD signals are generated by two nonlinear biophysical hemodynamic models with a specified input, so true amplitudes are known. Each model's linear approximation separates HRF-shape error from the nonlinear contribution. Full and static corrections use the second-order Volterra expansion, fixed before testing on independent data.
+\textit{Results.} Errors depend on event frequency and sequence and on overall stimulation level. At the largest amplitudes, median contrast underestimation is about 22\%. At zero contrast, differences in preceding events can produce a nonzero estimate. HRF-shape error and the nonlinear contribution can partly cancel. The full correction reduces the contrast RMSE by 40--80\% for clearly different amplitudes, depending on noise, and by 23--31\% under parameter spread; at zero contrast with random assignment the gain is small and strong noise raises the error; the static correction improves coefficients more often than the contrast. The second-order approximation reproduces the contrast error sign wherever resolvable.
 \textit{Conclusion.} Standard analysis with the canonical HRF gives biased estimates depending on amplitudes and temporal structure of stimulation. Second-order corrections markedly reduce the error for large amplitude differences, but not in all conditions. The findings apply to the studied models and protocols; extension to humans requires separate justification.
 \vspace{0.5\baselineskip}
 
