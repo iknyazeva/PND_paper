@@ -9,12 +9,12 @@
     "Figure/fig_7.pdf": "e467526cf6a1e27ccd232433f7a8c57e4e4b443616383f9a9f162a4398525f6e",
     "english_translation.tex": "9e458e83c4506b700e562357fb57377e68ef26d9a68cc27d2db7e552d0b1f691",
     "main.tex": "45206cca551e21f11eb02e4c661b4a0142992d9eaa2ee016c3b65ae7faf6f018",
-    "sections/01-introduction.tex": "7d8e9cf83cc0815e51589fad5df121df30747ca2ca7c5484a1a2b0a97e697272",
+    "sections/01-introduction.tex": "beacb7ed6cb267c60c06855ef0745166f77d6b87299d243a1a82c30f203dd934",
     "sections/02-methods.tex": "39ae8ad50c76cf5ce92d34148551a2644dbf65048b11660febbbfc5757d7d19e",
-    "sections/02-simulation.tex": "5c92a9b521d6cf5b248c01e4b15938579b58f675e5919760196c23024fbbcf56",
-    "sections/03-results.tex": "7802df157f3d7f7f63e739ef893072c72bbd617a5b4c38d3cb9e1d813dfa15c9",
+    "sections/02-simulation.tex": "bbc608caa16dab62142a81ab6110ab69d8381444eb28089fc24878dd41f1dba1",
+    "sections/03-results.tex": "693a7cc9a9b1ed64abb0af0fd10aa161bdb4190e843f9019ba51e7f9b536e15c",
     "sections/04-discussion.tex": "5903a3ecc432e8f115fdda8fb9015b041643edfaeafe33e2ded93712dde702b8",
-    "sections/05-conclusion.tex": "3688cb7607b11893f46baa45574928257ab7ba7f5091c4069e3ad9bfaaa15140",
+    "sections/05-conclusion.tex": "df39073ef9658870a7c505edf95471d7ae34fba7939dc603b30d972cfa3679c5",
     "sections/06-references.tex": "805c8fa301c78fc2f6f485fc1fc4bf5d432a0449a125a673c7e418615a09d936",
     "styleAND_2023.sty": "a8ee7b6bf13b4acd606ea6d4933e0a294117e9d5d648b8ddd04252a00fe2e903"
   },
@@ -25,7 +25,7 @@
       "reference_warnings": 0,
       "russian_hyphenation": true,
       "overfull_boxes": 3,
-      "sha256": "3daadf7464f736bf0ebc6f60abab449b50a96d4d306eb3ffb0e70eb7691f9b36"
+      "sha256": "7375272586a35ddddd6c32dafc591b0c36fbeb0d2da56624c2075957b664bc25"
     },
     "english_translation": {
       "pages": 5,
@@ -33,7 +33,7 @@
       "reference_warnings": 0,
       "russian_hyphenation": true,
       "overfull_boxes": 0,
-      "sha256": "567f93c036c8224ab31aa8dd7b4a63dc305a8b959b89afa1d5c88fc582c03945"
+      "sha256": "60301e1cd22c6a3af4e589a181c76251b3cce4ce3ca71f386fce128292ae4abc"
     }
   }
 }
