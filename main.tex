@@ -1,60 +1,48 @@
 % !TeX program = pdflatex
 \documentclass[11pt,twoside,a4paper]{article}
 \usepackage{styleAND_2023}
-\usepackage{array}% колонки wc{} равной ширины в таблице моделей (eq:model)
-\let\Letter\undefined% сбрасываем битый \Letter из ifsym (подключен в styleAND_2023 со значком Г)
-\usepackage{marvosym}% значок конверта (\Letter) для корреспондирующих авторов
-\usepackage{xurl}% переносимые DOI в списке литературы
-% Перед заголовком блока результатов: если рисунки или таблицы блока еще не размещены, начать новую страницу,
-% и повторять, пока все они не размещены; заголовок и текст пойдут под последним (в отличие от \FloatBarrier из placeins, без отдельных страниц с рисунками)
+\usepackage{array}
+\let\Letter\undefined
+\usepackage{marvosym}
+\usepackage{xurl}
+
+
 \makeatletter
 \newcount\fb@tries
 \newcommand{\fb@loop}{\begingroup\let\@elt\relax\edef\@tempa{\@botlist\@deferlist\@dbldeferlist}\ifx\@tempa\@empty\endgroup\else\endgroup\advance\fb@tries 1\relax\ifnum\fb@tries>3 \clearpage\else\hbox{}\newpage\fb@loop\fi\fi}
 \newcommand{\FloatBarrier}{\par\fb@tries=0\relax\fb@loop}
 \makeatother
 \captionsetup[table]{labelsep=period}
-% Английский перевод под русской подписью с сохранением номера рисунка или таблицы.
+
+
 \newcommand{\captionen}[2]{%
   \begingroup
   \captionsetup{skip=3pt}%
   \caption*{\foreignlanguage{english}{#1 #2}}%
   \endgroup
 }
-% Подзаголовки на отдельной строке (не в подбор)
+
 \makeatletter
 \renewcommand{\subsection}{\@startsection{subsection}%
   {1}{0pt}{0.25cm}{0.4cm}%
   {\bfseries\raggedright}%
 }
-\makeatother% отделяем номер таблицы от заголовка
-\emergencystretch=2em% устранение редких переполнений строк
+\makeatother
+\emergencystretch=2em
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% ПОЛЯ, КОТОРЫЕ ДОЛЖЕН ЗАПОЛНИТЬ АВТОР ПЕРЕД ПОДАЧЕЙ (метка ЗАПОЛНИТЬ): %%%
-%%% 1. \authors и \authorsen --- инициалы и фамилии всех авторов           %%%
-%%% 2. Блок аффилиаций на рус. и англ. --- организация, полный юридический %%%
-%%%    адрес с индексом, e-mail КАЖДОГО автора                             %%%
-%%% 3. \lett --- значок автора для переписки (после соответствующей фамилии)%%
-%%% 4. Благодарности (\Acknowledgements и \Acknowledgementsen) --- гранты   %%%
-%%% 5. Проверить УДК (сейчас 530.182 --- нелинейная динамика)               %%%
-%%%    варианты 517.9, 004.94, 616.8-073 по решению авторов)                %%%
-%%% 6. После принятия --- блоки информации об авторах (info-author)         %%%
-%%% Поля, заполняемые редакцией ( papernumber, EDN, даты, страницы ),      %%%
-%%% оставлены в шаблонном виде.                                            %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%       Заполняется редактором		%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\yearpub}{2026}
 \newcommand{\volumemag}{xx}
 \newcommand{\numbermag}{x}
-\newcommand{\published}{xx.xx.xxxx}% вышел в свет, опубликована
-
-%%%%%%%%% Заполняется редактором
-
+\newcommand{\published}{xx.xx.xxxx} 		% дата публикации
 \renewcommand{\papernumber}{xxxxxx}
 \renewcommand{\EDN}{EDN:~XXXXXX}
-\renewcommand{\received}{xx.xx.xxxx}% - поступила в редакцию
-\renewcommand{\accepted}{xx.xx.xxxx}% - принята к публикации
-\renewcommand{\onlinepublished}{xx.xx.xxxx}% - опубликована онлайн
+\renewcommand{\received}{xx.xx.xxxx} 		% - поступила в редакцию
+\renewcommand{\accepted}{xx.xx.xxxx} 		% - принята к публикации
+\renewcommand{\onlinepublished}{xx.xx.xxxx} % - опубликована онлайн
 \renewcommand{\firstpage}{xxx}
 \renewcommand{\lastpage}{xxx}
 
@@ -70,12 +58,9 @@
 \newtheorem{proposition}{Предложение}
 \newtheorem{corollary}{Следствие}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \zerocouter
-\graphicspath{{Figure/}} % путь к папке с графическами файлами
+\graphicspath{{Figure/}}
 
-% Разрешение крупных плавающих рисунков (16x18 см) вблизи точек упоминания
 \renewcommand{\topfraction}{0.97}
 \renewcommand{\bottomfraction}{0.6}
 \renewcommand{\textfraction}{0.03}
@@ -83,34 +68,31 @@
 \setcounter{topnumber}{2}
 \setcounter{totalnumber}{3}
 
-%%%%% Информация о статье. Заполняется автором
+
 
 \renewcommand{\titpaper}{Влияние нелинейности гемодинамического ответа на точность оценки контрастов активации в фМРТ}
 \renewcommand{\authors}{Князева~И.\,С., Корелов~М.\,С., Машарипов~Р.\,С., Медведева~Т.\,В., Киреев~М.\,В.}
 \renewcommand{\titpaperen}{The effect of hemodynamic response nonlinearity on the accuracy of activation contrast estimation in fMRI}
 \renewcommand{\authorsen}{Knyazeva~I.\,S., Korelov~M.\,S., Masharipov~R.\,S., Medvedeva~T.\,V., Kireev~M.\,V.}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 \label{firstpage}
 \thispagestyle{firststyle}
 
-\vspace*{0cm}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \infojournal
 \vspace*{.1cm}
 
 {\small \noindent
-	Научная статья\hfill \doi\\ % Научная статья %% Краткое сообщение %% Обзорная статья
+	Научная статья\hfill \doi\\ 
 	УДК~530.182  \hfill \EDN
-    %517.9, 004.94
 }
 \vspace*{.1cm}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{center}\textbf{\large \titpaper}\\[0.4\baselineskip]
-% 
+
 \emph{И.\,С.~Князева$^{1}$\lett, М.\,С.~Корелов$^{1,3}$\lett, Р.\,С.~Машарипов$^{1}$, Т.\,В.~Медведева$^{1}$, М.\,В.~Киреев$^{1,2}$}\vspace{.3\baselineskip}
 
 \footnotesize{
@@ -122,13 +104,15 @@
 	}
 \end{center}
 
+
+
 \begin{abstract}
 	\noindent\textbf{\textit{Аннотация}}.
 Активацию областей мозга по BOLD-сигналу функциональной МРТ оценивают общей линейной моделью с канонической функцией гемодинамического ответа (HRF), и различия условий выражают контрастами. Однако преобразование нейрональной активности в BOLD-сигнал нелинейно и не описывается полностью сверткой с фиксированной функцией.
-\textit{Цель.} Определить точность этих оценок при нелинейном формировании BOLD-сигнала и проверить аналитические поправки без повторного подбора параметров нелинейной модели.
+\textit{Цель.} Определить точность оценок амплитуд и контраста при нелинейном формировании BOLD-сигнала и проверить аналитические поправки без повторного подбора параметров нелинейной модели.
 \textit{Методы.} Синтетический BOLD-сигнал порождается двумя нелинейными биофизическими моделями гемодинамики при заданном входе, поэтому истинные амплитуды известны. Собственное линейное приближение каждой модели отделяет ошибку формы HRF от вклада нелинейности. Полная и статическая поправки строятся по второму порядку разложения Вольтерра, их параметры фиксируются до проверки на независимых данных.
-\textit{Результаты.} Ошибки зависят от частоты и последовательности событий и от общего уровня стимуляции. При наибольших амплитудах медианное занижение контраста составляет около 22\%. При нулевом заданном контрасте различия в предшествующих событиях могут давать ненулевую оценку. Ошибка формы HRF и нелинейный вклад могут частично компенсироваться. Полная поправка снижает RMSE контраста при заметной разности амплитуд на 40--80\% в зависимости от шума и на 23--31\% при разбросе параметров. При нулевом контрасте и случайном чередовании условий снижение ошибки незначительно, при сильном шуме ошибка растет. Статическая поправка улучшает отдельные коэффициенты чаще, чем контраст. Приближение второго порядка воспроизводит знак ошибки контраста всюду, где он различим.
-\textit{Заключение.} Стандартный анализ с канонической HRF дает смещенные оценки амплитуд и контраста, зависящие от амплитуд и временной структуры стимуляции. Одношаговые поправки второго порядка заметно уменьшают ошибку при большой разности амплитуд, но улучшение не распространяется на все условия.\vspace{0.5\baselineskip}
+\textit{Результаты.} Ошибки зависят от частоты и последовательности событий и от общего уровня стимуляции. При наибольших амплитудах медианное занижение контраста составляет около 22\%. При нулевом заданном контрасте различия в предшествующих событиях могут давать ненулевую оценку. Ошибка формы HRF и нелинейный вклад могут частично компенсироваться. Полная поправка снижает RMSE контраста при заметной разности амплитуд на 40--80\% в зависимости от шума и на 23--31\% при разбросе параметров. При нулевом контрасте и случайном чередовании условий снижение ошибки незначительно, при сильном шуме ошибка растет. Статическая поправка улучшает отдельные коэффициенты чаще, чем контраст. Знак ошибки контраста, рассчитанный во втором порядке, совпадает с фактическим во всех случаях, где он различим.
+\textit{Заключение.} Стандартный анализ с канонической HRF дает смещенные оценки амплитуд и контраста, зависящие от амплитуд и временной структуры стимуляции. Одношаговые поправки второго порядка заметно уменьшают ошибку при большой разности амплитуд.\vspace{0.5\baselineskip}
 
 \keywords{функциональная МРТ, BOLD-сигнал, функция гемодинамического ответа, модель Balloon--Wind\-kes\-sel, нелинейность, общая линейная модель, контраст активаций, ряды Вольтерра.}
 
@@ -140,9 +124,15 @@
 \end{abstract}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% английский титульник
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
 \newpage
 
 \noindent{\small Article %% Article %%  Short communication  %%  Review
@@ -169,10 +159,10 @@
 
 \noindent\textbf{\textit{Abstract.}}
 Activation of brain regions is estimated from the fMRI BOLD signal by a general linear model with the canonical hemodynamic response function (HRF), and condition differences are expressed as contrasts. Yet BOLD formation is nonlinear, beyond convolution with a fixed function.
-The \textit{purpose} is to determine the accuracy of these estimates and to test analytical corrections without refitting a nonlinear model.
+The \textit{purpose} is to determine the accuracy of amplitude and contrast estimates and to test analytical corrections without refitting a nonlinear model.
 \textit{Methods.} Synthetic BOLD signals are generated by two nonlinear biophysical hemodynamic models with a specified input, so true amplitudes are known. Each model's linear approximation separates HRF-shape error from the nonlinear contribution. Full and static corrections use the second-order Volterra expansion, fixed before testing on independent data.
-\textit{Results.} Errors depend on event frequency and sequence and on overall stimulation level. At the largest amplitudes, median contrast underestimation is about 22\%. At zero contrast, differences in preceding events can produce a nonzero estimate. HRF-shape error and the nonlinear contribution can partly cancel. The full correction reduces the contrast RMSE by 40--80\% for clearly different amplitudes, depending on noise, and by 23--31\% under parameter spread; at zero contrast with random interleaving of conditions the error reduction is small and strong noise raises the error; the static correction improves coefficients more often than the contrast. The second-order approximation reproduces the contrast error sign wherever resolvable.
-\textit{Conclusion.} Standard analysis with the canonical HRF gives biased estimates depending on amplitudes and temporal structure of stimulation. Second-order corrections markedly reduce the error for large amplitude differences, but not in all conditions.
+\textit{Results.} Errors depend on event frequency and sequence and on overall stimulation level. At the largest amplitudes, median contrast underestimation is about 22\%. At zero contrast, differences in preceding events can produce a nonzero estimate. HRF-shape error and the nonlinear contribution can partly cancel. The full correction reduces the contrast RMSE by 40--80\% for clearly different amplitudes, depending on noise, and by 23--31\% under parameter spread; at zero contrast with random interleaving of conditions the error reduction is small and strong noise raises the error; the static correction improves coefficients more often than the contrast. The contrast error sign from the second-order approximation matches the actual sign wherever resolvable.
+\textit{Conclusion.} Standard analysis with the canonical HRF gives biased estimates depending on amplitudes and temporal structure of stimulation. Second-order corrections markedly reduce the error for large amplitude differences.
 \vspace{0.5\baselineskip}
 
 
@@ -184,9 +174,15 @@ The \textit{purpose} is to determine the accuracy of these estimates and to test
 \licensen
 \end{abstract}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% текст
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
 
 \input{sections/01-introduction}
 \input{sections/02-methods}
@@ -194,10 +190,15 @@ The \textit{purpose} is to determine the accuracy of these estimates and to test
 \input{sections/03-results}
 \input{sections/04-discussion}
 \input{sections/05-conclusion}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \input{sections/06-references}
+
+
+
+
+
+
+
+
 
 \label{lastpage}
 \end{document}
