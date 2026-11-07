@@ -13,6 +13,13 @@
 \newcommand{\FloatBarrier}{\par\fb@tries=0\relax\fb@loop}
 \makeatother
 \captionsetup[table]{labelsep=period}
+% Английский перевод под русской подписью с сохранением номера рисунка или таблицы.
+\newcommand{\captionen}[2]{%
+  \begingroup
+  \captionsetup{skip=3pt}%
+  \caption*{\foreignlanguage{english}{#1 #2}}%
+  \endgroup
+}
 % Подзаголовки на отдельной строке (не в подбор)
 \makeatletter
 \renewcommand{\subsection}{\@startsection{subsection}%
@@ -125,7 +132,7 @@
 
 \keywords{функциональная МРТ, BOLD-сигнал, функция гемодинамического ответа, модель Balloon--Wind\-kes\-sel, нелинейность, общая линейная модель, контраст активаций, ряды Вольтерра.}
 
-\Acknowledgements{ЗАПОЛНИТЬ: финансовая поддержка (гранты), благодарности конкретным лицам. Либо указать: «Работа выполнена без финансовой поддержки фондов».}
+\Acknowledgements{Данное исследование выполнено в рамках государственного задания Министерства науки и высшего образования Российской Федерации (проект ИМЧ РАН № 125030703331-8).}
 
 \Referenc{\textit{\authors}\hspace{3pt}\titpaper\hspace{2pt}//\hspace{2pt}Известия вузов. ПНД. \yearpub. T.~\volumemag, №~\numbermag. С.~\firstpage--\lastpage. \doi. \EDN}
 
@@ -171,7 +178,7 @@ The \textit{purpose} is to determine their accuracy and test analytical correcti
 
 \keywordsen{functional MRI, BOLD signal, hemodynamic response function, Balloon--Wind\-kes\-sel model, nonlinearity, general linear model, activation contrast, Volterra series.}
 	
-\Acknowledgementsen{This work was supported by...}
+\Acknowledgementsen{This research was carried out within the framework of the state assignment of the Ministry of Science and Higher Education of the Russian Federation (Institute of the Human Brain, Russian Academy of Sciences, project No. 125030703331-8).}
 	
 \Referencen{\textit{\authorsen}\hspace{3pt}\titpaperen.\hspace{2pt}{Izvestiya VUZ. Applied Nonlinear Dynamics}. \yearpub;\volumemag(\numbermag):\firstpage--\lastpage. \doi}
 \licensen

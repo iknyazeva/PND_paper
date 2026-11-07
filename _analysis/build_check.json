@@ -7,25 +7,25 @@
     "Figure/fig_5.pdf": "932a533241fe73eac78f397ead1dd5e2c480d442443b4c3a8c037877a6679326",
     "Figure/fig_6.pdf": "42a1fa15674c872f6cbad83feaa82ef62c27b2cf871d1abf4e64cd5061fbd5ed",
     "Figure/fig_7.pdf": "e467526cf6a1e27ccd232433f7a8c57e4e4b443616383f9a9f162a4398525f6e",
-    "english_translation.tex": "9e458e83c4506b700e562357fb57377e68ef26d9a68cc27d2db7e552d0b1f691",
-    "main.tex": "45206cca551e21f11eb02e4c661b4a0142992d9eaa2ee016c3b65ae7faf6f018",
-    "sections/01-introduction.tex": "beacb7ed6cb267c60c06855ef0745166f77d6b87299d243a1a82c30f203dd934",
-    "sections/02-methods.tex": "39ae8ad50c76cf5ce92d34148551a2644dbf65048b11660febbbfc5757d7d19e",
-    "sections/02-simulation.tex": "bbc608caa16dab62142a81ab6110ab69d8381444eb28089fc24878dd41f1dba1",
-    "sections/03-results.tex": "693a7cc9a9b1ed64abb0af0fd10aa161bdb4190e843f9019ba51e7f9b536e15c",
-    "sections/04-discussion.tex": "5903a3ecc432e8f115fdda8fb9015b041643edfaeafe33e2ded93712dde702b8",
-    "sections/05-conclusion.tex": "df39073ef9658870a7c505edf95471d7ae34fba7939dc603b30d972cfa3679c5",
-    "sections/06-references.tex": "805c8fa301c78fc2f6f485fc1fc4bf5d432a0449a125a673c7e418615a09d936",
+    "english_translation.tex": "390d97ba357fe597bfd12038e62eb4f17522c42ebcf8519371a695b82ded076d",
+    "main.tex": "783abd94131eb1255846db985df2881ba7b2b608ce946379334c9a71846c0732",
+    "sections/01-introduction.tex": "84e877e699b0a400b925b94e80d2b3f6897f4be6833d1fa5baf1c7f423b2a7a3",
+    "sections/02-methods.tex": "5fa64a2cb0a3db024d1c56085b49511d49ec5028b4ffa882f7ecea3eaabba58d",
+    "sections/02-simulation.tex": "1b57467a8e517fad6c19fff8da88ac28f99bc0b4413ad0eaff904e12b136fa23",
+    "sections/03-results.tex": "1a1396c4de2bb528663093fbf839ec9a2000ea5860b9f647d44a0e3682c0ce0a",
+    "sections/04-discussion.tex": "6165b662a9b9120a719920865874bdcc378164f920f41ad9524b281ecaa56d46",
+    "sections/05-conclusion.tex": "021c3c5f7e38bd26723667310426a5b348097564136d12aee21dbd7ed53bc40a",
+    "sections/06-references.tex": "a9e121415d292695c95374ea50fc734f235669d0a060f4705fbdd146e99fe107",
     "styleAND_2023.sty": "a8ee7b6bf13b4acd606ea6d4933e0a294117e9d5d648b8ddd04252a00fe2e903"
   },
   "outputs": {
     "main": {
-      "pages": 25,
+      "pages": 24,
       "passes": 2,
       "reference_warnings": 0,
       "russian_hyphenation": true,
-      "overfull_boxes": 3,
-      "sha256": "7375272586a35ddddd6c32dafc591b0c36fbeb0d2da56624c2075957b664bc25"
+      "overfull_boxes": 5,
+      "sha256": "085e14a3ae5f944db301f4ff1881a2fb519070b19629e464fbc6fe57f83d0c62"
     },
     "english_translation": {
       "pages": 5,
@@ -33,7 +33,7 @@
       "reference_warnings": 0,
       "russian_hyphenation": true,
       "overfull_boxes": 0,
-      "sha256": "60301e1cd22c6a3af4e589a181c76251b3cce4ce3ca71f386fce128292ae4abc"
+      "sha256": "301ab42795caa0dcf55967049aabfc700ca248da3072f9e4e463c10b75e71085"
     }
   }
 }
