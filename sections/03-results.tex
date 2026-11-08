@@ -43,9 +43,9 @@
 	\captionen{Fig.~\thefigure.}{Two regimes of nonlinear distortion of the BOLD signal in stimulus sequences. \textit{a} --- contrast underestimation at $a_A=0.30$, $a_B=0.05$ with random stimulus intervals and a mean SOA of 1.7~s. \textit{b} --- a nonzero contrast estimate at equal amplitudes $a_A=a_B=0.30$ and zero specified contrast, with condition A presented at short intervals and condition B at longer ones. The solid blue line is the P-DCM BOLD response, grey bars on the right axis show the stimulus times of conditions A and B, the green dashed line is the linear model with the canonical HRF at the input amplitudes, and the red dotted line is the standard GLM estimate; the panel labels give the coefficient and contrast estimates for the GLM and for the FV and FW corrections. Recording length 70~s, stimulus duration 1~s.}
 \end{figure}
 
-Собственное линейное приближение проверялось в пределе слабого сигнала: при пиковом приросте кровотока $0.01$ относительная норма $L^2$ разности полного и собственного линейного ответов составляет $0.2\%$ и $0.3\%$ для P-DCM и BW соответственно. Однако точность линейного приближения и близость форм не гарантируют точность оценок при конечных амплитудах. При $L_1$ ошибка контраста сохраняется и растет с амплитудой (рис.~\ref{fig:f5}, табл.~\ref{tab:amp}). В бесшумных расчетах при $a_A=0.05$ медианная относительная ошибка у обоих генераторов составляет единицы процентов. При $a_A=0.2$ и среднем SOA 2~с она достигает $25.6\%$ контраста у P-DCM и $19.7\%$ у BW. С ростом интервала ошибка уменьшается, но все еще заметна и при SOA 8~с.
+Собственное линейное приближение проверялось в пределе слабого сигнала: при пиковом приросте кровотока $0.01$ относительная норма $L^2$ разности полного и собственного линейного ответов составляет $0.2\%$ и $0.3\%$ для P-DCM и BW соответственно. Однако точность линейного приближения и близость форм не гарантируют точность оценок при конечных амплитудах. При $L_1$ ошибка контраста сохраняется и растет с амплитудой (рис.~\ref{fig:f5}, табл.~\ref{tab:amp}). В бесшумных расчетах при $a_A=0.05$ медианная относительная ошибка у обоих генераторов составляет единицы процентов. При $a_A=0.2$ и среднем SOA 2~с она достигает $25.6\%$ контраста у P-DCM и $19.7\%$ у BW (рис.~\ref{fig:f5}, \textit{a}, \textit{d}). С ростом интервала ошибка уменьшается, но все еще заметна и при SOA 8~с.
 
-С $C$ ошибка контраста определяется совместно несовпадением формы и масштаба HRF и нелинейным вкладом. При $a_A=0.05$ ее медиана составляет $-0.3\%$ у P-DCM и $-6.2\%$ у BW против $-4.7\%$ и $-3.5\%$ с $L_1$. При $a_A=0.3$ медиана равна $-22.7\%$ и $-21.6\%$ (рис.~\ref{fig:f5}, табл.~\ref{tab:amp}). На последовательности $k=0$ из расчета 5 при $a_A=0.3$, $a_B=0.15$ и среднем SOA 2~с $C$ занижает коэффициент A на $22\%$ у P-DCM и на $27\%$ у BW, коэффициент B на $13\%$ и $26\%$, контраст на $31\%$ и $27\%$.
+С $C$ ошибка контраста определяется совместно несовпадением формы и масштаба HRF и нелинейным вкладом. При $a_A=0.05$ ее медиана составляет $-0.3\%$ у P-DCM и $-6.2\%$ у BW против $-4.7\%$ и $-3.5\%$ с $L_1$. При $a_A=0.3$ медиана равна $-22.7\%$ и $-21.6\%$ (рис.~\ref{fig:f5}, табл.~\ref{tab:amp}). Как ошибки отдельных амплитуд складываются в ошибку контраста, показывает последовательность $k=0$ из расчета 5 при $a_A=0.3$, $a_B=0.15$ и среднем SOA 2~с: $C$ занижает коэффициент A на $22\%$ у P-DCM и на $27\%$ у BW, коэффициент B на $13\%$ и $26\%$, контраст на $31\%$ и $27\%$.
 
 \begin{table}[!ht]
 \captionsetup{justification=raggedright}
@@ -114,7 +114,7 @@
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{lccccccccccc}
 \hline
-\multirow{2}{*}{Режим} & \multicolumn{2}{c}{RMSE} & \multicolumn{3}{c}{Основной контраст} & \multicolumn{3}{c}{Малый контраст} & \multicolumn{3}{c}{Нулевой контраст}\\
+\multirow{2}{*}{Режим} & \multicolumn{2}{c}{RMSE} & \multicolumn{3}{c}{Основной контраст, \%} & \multicolumn{3}{c}{Малый контраст, \%} & \multicolumn{3}{c}{Нулевой контраст, \%}\\
 \cline{2-12}
  & $C$ & FV & б/ш & 8 & 2 & б/ш & 8 & 2 & б/ш & 8 & 2\\
 \hline
