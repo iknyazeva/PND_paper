@@ -37,7 +37,7 @@ def main():
                     + list(ARTICLE.glob('*.sty')) + list((ARTICLE / 'Figure').glob('*.pdf')))
     before = {str(p.relative_to(ARTICLE)): digest(p) for p in inputs}
     results = {}
-    for stem in ['main', 'english_translation']:
+    for stem in ['main']:
         out = build / stem
         out.mkdir()
         previous = None

@@ -7,33 +7,24 @@
     "Figure/fig_5.pdf": "932a533241fe73eac78f397ead1dd5e2c480d442443b4c3a8c037877a6679326",
     "Figure/fig_6.pdf": "42a1fa15674c872f6cbad83feaa82ef62c27b2cf871d1abf4e64cd5061fbd5ed",
     "Figure/fig_7.pdf": "e467526cf6a1e27ccd232433f7a8c57e4e4b443616383f9a9f162a4398525f6e",
-    "english_translation.tex": "3b397025e934f7602e9ff23cb9ba8af2fe38bfc9bccdb10ecbc97e55b3746154",
-    "main.tex": "c71191e581fed77f743e9e10db219888f555fb0008f88c5c7ec0ec2a7abe456c",
-    "sections/01-introduction.tex": "d0473a62b7b4ff70e9cac5e596d244433e5195a5a0e7be9616388ea0e4a2211d",
-    "sections/02-methods.tex": "0ef61afb5b17ce305fb48cb611c34d0c7e912030fff08bdfca5f635d11a48871",
+    "main.tex": "5102c20c37f11a16fb0f02601b5462dd12a35e8d353bec207c76c426754e1617",
+    "sections/01-introduction.tex": "a8dccdb5c5469e805dd70ad3c3ae61f64321f6fdc92a0c28667d59a9fd9cd938",
+    "sections/02-methods.tex": "5ce89e8542bd865155b203b55f9b24905e5a8180df4a14ed00ebeafb516b569e",
     "sections/02-simulation.tex": "2f5841c4afb102071732f0e1e34647035a7eb19ab41a295fe5d8353df85d7daa",
-    "sections/03-results.tex": "50f0166bf8cf8636cab6ba4a3f7b7ef7c64cd0c6fd671b444796bd150eca4b9b",
+    "sections/03-results.tex": "4d94acea7df46dfa4b9e34b6ca2ecbbd4225d178363beac2746db4e1105ba659",
     "sections/04-discussion.tex": "e9452b4131a3db929d4667bb72ad5c4f9d096e5ed1b34c797f1cd6d418ad2aca",
-    "sections/05-conclusion.tex": "d40769340cd1c0f8b57e58de7f2d044ab384a1f5bb6970dc46e373587bc0b260",
-    "sections/06-references.tex": "e97167cb0681bf05a268a185c9b244e4f92283b9d503d58296dd4e66ae8cbd07",
+    "sections/05-conclusion.tex": "b0a8d9565a3b81d42471a3a0e1838a6ffc4bb7a0e6c4bb14d5e5c4d730987567",
+    "sections/06-references.tex": "d3228a98c304c9603b1d87994ae7a2236193d92cbc4030639f5eca9a86acf874",
     "styleAND_2023.sty": "a8ee7b6bf13b4acd606ea6d4933e0a294117e9d5d648b8ddd04252a00fe2e903"
   },
   "outputs": {
     "main": {
-      "pages": 24,
+      "pages": 25,
       "passes": 2,
       "reference_warnings": 0,
       "russian_hyphenation": true,
-      "overfull_boxes": 4,
-      "sha256": "fce21b5a6aade10df4f149aabe9dff13f40cccaacf361c7eb96ef49ccbef1a8d"
-    },
-    "english_translation": {
-      "pages": 5,
-      "passes": 2,
-      "reference_warnings": 0,
-      "russian_hyphenation": true,
-      "overfull_boxes": 0,
-      "sha256": "d2dfad9b5ee65799e82d914e78a0f7f3bae2e3fb50c67255b232cb0ed7391d50"
+      "overfull_boxes": 2,
+      "sha256": "82072903b4fdc47fd5334f679ee8ff6c0dd02b328d43d22708e546f4526fae50"
     }
   }
 }
